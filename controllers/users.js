@@ -2,6 +2,11 @@ import {v4 as uuidv4} from "uuid";
 
 let users = []
 
+export const getUsers = (req, res) => {
+    res.send(users);
+    console.log('pobrano userow');
+}
+
 export const createUser = (req,res)=>{
     const user = req.body;
 
@@ -9,11 +14,6 @@ export const createUser = (req,res)=>{
 
     res.send(`Userr ${user.firstName} added`);
     console.log('dodano usera');
-}
-
-export const getUsers = (req, res) => {
-    res.send(users);
-    console.log('pobrano userow');
 }
 
 export const getUser = (req, res) => {
